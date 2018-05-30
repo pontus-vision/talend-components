@@ -12,6 +12,10 @@
 // ============================================================================
 package org.talend.components.common.datastore;
 
+import java.util.Arrays;
+import java.util.List;
+
+import org.talend.components.api.component.SupportedProduct;
 import org.talend.components.common.dataset.DatasetProperties;
 import org.talend.daikon.definition.Definition;
 import org.talend.daikon.runtime.RuntimeInfo;
@@ -29,9 +33,17 @@ public interface DatastoreDefinition<DatastorePropT extends DatastoreProperties>
 
     /**
      * @param properties an instance of the definition.
-     * @return an object that can be used to create a runtime instance of this definition, configured by the properties
-     * of the instance and the context. This can be null if no runtime applies.
+     * @return an object that can be used to create a runtime instance of this definition, configured by the properties of
+     * the instance and the context. This can be null if no runtime applies.
      */
     RuntimeInfo getRuntimeInfo(DatastorePropT properties);
 
+    /**
+     * This method return which products the datastore and components supports.
+     *
+     * @return all supported product types.
+     */
+    default List<String> getSupportedProducts() {
+        return Arrays.asList(SupportedProduct.ALL);
+    }
 }
