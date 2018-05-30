@@ -64,6 +64,9 @@ public class DefinitionDTO {
     /** Connectors supported by the definition (only for components). */
     private List<ConnectorDto> connectors;
 
+    /** The supported products. */
+    private List<String> supportedProducts = null;
+
     /**
      * Default empty constructor.
      */
@@ -100,6 +103,7 @@ public class DefinitionDTO {
         this.type = "datastore";
         this.inputCompName = origin.getInputCompDefinitionName();
         this.outputCompName = origin.getOutputCompDefinitionName();
+        this.supportedProducts = origin.getSupportedProducts();
     }
 
     /**
@@ -120,6 +124,7 @@ public class DefinitionDTO {
                 .map(ExecutionEngine::toString) //
                 .collect(Collectors.toSet());
         this.connectors = ConnectorDto.createConnectorList(origin);
+        this.supportedProducts = origin.getSupportedProducts();
     }
 
     private String buildIconUrl(Definition origin, DefinitionImageType imageType) {
@@ -214,6 +219,14 @@ public class DefinitionDTO {
         this.connectors = connectors;
     }
 
+    public List<String> getSupportedProducts() {
+        return this.supportedProducts;
+    }
+
+    public void setSupportedProducts(List<String> supportedProducts) {
+        this.supportedProducts = supportedProducts;
+    }
+
     @Override
     public String toString() {
         return "DefinitionDTO{" + //
@@ -227,6 +240,7 @@ public class DefinitionDTO {
                 ", type='" + type + '\'' + //
                 ", typologies=" + typologies + //
                 ", executionEngines=" + engines + //
+                ", supportedProducts=" + supportedProducts + //
                 '}';
     }
 }
