@@ -12,11 +12,17 @@
 // ============================================================================
 package org.talend.components.marketo.data;
 
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.hasItems;
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+
+import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.talend.components.api.component.SupportedProduct;
 import org.talend.components.common.dataset.DatasetProperties;
 import org.talend.components.common.datastore.DatastoreProperties;
 import org.talend.components.marketo.MarketoComponentDefinition;
@@ -35,8 +41,9 @@ public class MarketoDatastoreDefinitionTest {
         connection = new MarketoDatastoreProperties("test");
     }
 
-    @After
-    public void tearDown() throws Exception {
+    @Test
+    public void testSupportedProducts() throws Exception {
+        assertThat(definition.getSupportedProducts(), hasItems(SupportedProduct.DI, SupportedProduct.DATAPREP));
     }
 
     @Test

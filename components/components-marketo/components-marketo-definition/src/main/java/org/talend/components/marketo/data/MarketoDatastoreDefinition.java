@@ -14,8 +14,12 @@ package org.talend.components.marketo.data;
 
 import static org.talend.components.marketo.MarketoComponentDefinition.getCommonRuntimeInfo;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.talend.components.api.component.SupportedProduct;
 import org.talend.components.common.dataset.DatasetProperties;
 import org.talend.components.common.datastore.DatastoreDefinition;
 import org.talend.components.marketo.MarketoComponentDefinition;
@@ -61,6 +65,11 @@ public class MarketoDatastoreDefinition extends I18nDefinition implements Datast
     @Override
     public RuntimeInfo getRuntimeInfo(MarketoDatastoreProperties properties) {
         return getCommonRuntimeInfo(MarketoComponentDefinition.RUNTIME_DATASTORE);
+    }
+
+    @Override
+    public List<String> getSupportedProducts() {
+        return Arrays.asList(SupportedProduct.DATAPREP, SupportedProduct.DI);
     }
 
     @Override
