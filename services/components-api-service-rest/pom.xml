@@ -35,11 +35,13 @@
         <httpcore.version>4.4.9</httpcore.version>
         <jackson.version.annotations>2.9.0</jackson.version.annotations>
         <jackson.version>2.9.5</jackson.version>
+        <jetty.version>9.4.12.v20180830</jetty.version>
         <org.talend.libraries.mysql.version>6.0.0</org.talend.libraries.mysql.version>
         <pax-url-aethe.version>2.4.7</pax-url-aethe.version>
         <rest-assured.version>2.6.0</rest-assured.version>
         <scala.version>2.11.12</scala.version>
         <slf4.version>1.7.25</slf4.version>
+        <spring-boot.version>1.5.17.RELEASE</spring-boot.version>
         <spring-test.version>4.3.20.RELEASE</spring-test.version>
         <!-- Aligned with component-parent -->
         <docker-maven-plugin.version>0.26.0</docker-maven-plugin.version>
@@ -60,6 +62,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
+            <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -299,6 +302,21 @@
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
             <version>${groovy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-http</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-plus</artifactId>
+            <version>${jetty.version}</version>
         </dependency>
     </dependencies>
 
