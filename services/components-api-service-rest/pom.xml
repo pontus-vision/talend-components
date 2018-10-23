@@ -37,6 +37,7 @@
         <org.talend.libraries.mysql.version>6.0.0</org.talend.libraries.mysql.version>
         <pax-url-aethe.version>2.4.7</pax-url-aethe.version>
         <rest-assured.version>2.6.0</rest-assured.version>
+        <scala.version>2.11.12</scala.version>
         <slf4.version>1.7.25</slf4.version>
         <!-- Aligned with component-parent -->
         <docker-maven-plugin.version>0.26.0</docker-maven-plugin.version>
@@ -265,6 +266,27 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore-nio</artifactId>
             <version>${httpcore-nio.version}</version>
+        </dependency>
+        <!-- scala -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scalap</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>${scala.version}</version>
         </dependency>
     </dependencies>
 

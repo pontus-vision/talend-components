@@ -339,7 +339,7 @@
                 <version>3.0.1</version>
                 <configuration>
                     <fail>false</fail>
-                    <cvssScoreThreshold>5.0</cvssScoreThreshold>
+                    <cvssScoreThreshold>1.0</cvssScoreThreshold>
                 </configuration>
                 <executions>
                     <execution>
