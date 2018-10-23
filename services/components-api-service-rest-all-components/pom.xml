@@ -25,6 +25,7 @@
         <daikon.version>0.29.0-SNAPSHOT</daikon.version>
         <!-- Used for Docker images name -->
         <git_branch>local</git_branch>
+        <groovy.version>2.4.8</groovy.version>
         <talend_docker_registry>registry.datapwn.com</talend_docker_registry>
         <jackson.version>2.9.5</jackson.version>
         <jackson.version.annotations>2.9.0</jackson.version.annotations>
@@ -142,6 +143,11 @@
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-scala_2.11</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>${groovy.version}</version>
         </dependency>
     </dependencies>
 
