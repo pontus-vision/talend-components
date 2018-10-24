@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.1.RELEASE</version>
+        <version>1.5.17.RELEASE</version>
     </parent>
 
     <groupId>org.talend.components</groupId>
@@ -32,6 +32,8 @@
         <guava.version>20.0</guava.version>
         <logback.version>1.1.9</logback.version>
         <slf4.version>1.7.25</slf4.version>
+        <logback.version>1.1.11</logback.version>
+        <spring-boot.version>1.5.17.RELEASE</spring-boot.version>
         <spring-test.version>4.3.20.RELEASE</spring-test.version>
         <bnd-annotation.version>2.4.0</bnd-annotation.version>
         <!-- Aligned with component-parent -->
@@ -94,6 +96,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
