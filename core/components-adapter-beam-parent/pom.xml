@@ -20,6 +20,7 @@
         <spark.version>2.2.1</spark.version>
         <hadoop.version>2.7.3</hadoop.version>
         <scala.version>2.11.12</scala.version>
+        <scala-xml.version>2.11.0-M4</scala-xml.version>
         <zookeeper.version>3.4.10</zookeeper.version>
         <jackson.version>2.9.5</jackson.version>
         <spring-boot.version>1.5.17.RELEASE</spring-boot.version>
@@ -143,7 +144,7 @@
             <dependency>
                 <groupId>org.scala-lang</groupId>
                 <artifactId>scala-xml</artifactId>
-                <version>${scala.version}</version>
+                <version>${scala-xml.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>

@@ -169,6 +169,7 @@
         <powermock-module-junit4.version>1.6.5</powermock-module-junit4.version>
         <protobuf-java.version>3.3.0</protobuf-java.version>
         <scala.version>2.11.12</scala.version>
+        <scala-xml.version>2.11.0-M4</scala-xml.version>
         <slf4.version>1.7.25</slf4.version>
         <snakeyaml.version>1.17</snakeyaml.version>
         <snappy-java.version>1.1.1.3</snappy-java.version>
@@ -1492,7 +1493,7 @@
             <dependency>
                 <groupId>org.scala-lang</groupId>
                 <artifactId>scala-xml</artifactId>
-                <version>${scala.version}</version>
+                <version>${scala-xml.version}</version>
             </dependency>
             <!-- groovy -->
             <dependency>
