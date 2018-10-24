@@ -8,10 +8,13 @@
         <relativePath>../../components-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <name>Component Command Line Property Tester</name>
     <artifactId>components-api-proptester</artifactId>
-
+    <properties>
+        <jackson.version>2.9.5</jackson.version>
+        <spring-boot.version>1.5.17.RELEASE</spring-boot.version>
+        <spring-test.version>4.3.20.RELEASE</spring-test.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>biz.aQute.bnd</groupId>
@@ -52,8 +55,17 @@
             <groupId>org.talend.components</groupId>
             <artifactId>components-api-service-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring-test.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>

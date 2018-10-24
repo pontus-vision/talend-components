@@ -7,11 +7,15 @@
 		<version>0.26.0-SNAPSHOT</version>
 		<relativePath>../../components-parent/pom.xml</relativePath>
 	</parent>
-
 	<name>Components - OAuth</name>
 	<artifactId>components-common-oauth</artifactId>
 	<packaging>bundle</packaging>
-
+	<properties>
+		<jackson.version>2.9.5</jackson.version>
+		<spring-boot.version>1.5.17.RELEASE</spring-boot.version>
+		<spring-test.version>4.3.20.RELEASE</spring-test.version>
+		<groovy.version>2.4.8</groovy.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.oltu.oauth2</groupId>
@@ -44,6 +48,21 @@
 			<artifactId>rest-assured</artifactId>
 			<version>3.0.1</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring-test.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy</artifactId>
+			<version>${groovy.version}</version>
 		</dependency>
 	</dependencies>
 

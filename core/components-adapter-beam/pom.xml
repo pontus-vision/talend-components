@@ -55,6 +55,7 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.11</artifactId>
             <scope>provided</scope>
+
         </dependency>
         <!-- Tests -->
         <dependency>

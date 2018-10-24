@@ -13,7 +13,11 @@
     <name>Components - Shared Component Parts</name>
     <artifactId>components-common</artifactId>
     <packaging>bundle</packaging>
-
+    <properties>
+        <jackson.version>2.9.5</jackson.version>
+        <spring-boot.version>1.5.17.RELEASE</spring-boot.version>
+        <spring-test.version>4.3.20.RELEASE</spring-test.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>net.sourceforge.javacsv</groupId>
@@ -56,7 +60,16 @@
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring-test.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
