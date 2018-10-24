@@ -1489,6 +1489,11 @@
                 <artifactId>scala-reflect</artifactId>
                 <version>${scala.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-xml</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
             <!-- groovy -->
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
