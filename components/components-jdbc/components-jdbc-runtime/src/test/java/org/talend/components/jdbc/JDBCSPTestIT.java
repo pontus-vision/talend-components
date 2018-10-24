@@ -109,7 +109,8 @@ public class JDBCSPTestIT {
             reader.start();
             IndexedRecord row = (IndexedRecord) reader.getCurrent();
             String v1 = (String) row.get(0);
-            Assert.assertEquals("memory:myDB", v1);
+            Assert.assertNotNull(v1);
+            Assert.assertTrue(v1.matches("^memory:.*myDB$"));
 
             Assert.assertFalse(reader.advance());// only output one row when it works as a input component
 
