@@ -97,18 +97,18 @@
                 <artifactId>spark-core_2.11</artifactId>
                 <version>${spark.version}</version>
                 <exclusions>
-                    <exclusion>
-                        <groupId>org.apache.hadoop</groupId>
-                        <artifactId>hadoop-client</artifactId>
-                    </exclusion>
+                    <!--<exclusion>-->
+                        <!--<groupId>org.apache.hadoop</groupId>-->
+                        <!--<artifactId>hadoop-client</artifactId>-->
+                    <!--</exclusion>-->
                     <exclusion>
                         <groupId>javax.mail</groupId>
                         <artifactId>mail</artifactId>
                     </exclusion>
-                    <exclusion>
-                        <groupId>io.netty</groupId>
-                        <artifactId>netty-all</artifactId>
-                    </exclusion>
+                    <!--<exclusion>-->
+                        <!--<groupId>io.netty</groupId>-->
+                        <!--<artifactId>netty-all</artifactId>-->
+                    <!--</exclusion>-->
                     <exclusion>
                         <groupId> org.scala-lang</groupId>
                         <artifactId>scalap</artifactId>
