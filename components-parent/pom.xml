@@ -499,7 +499,7 @@
                         </exclude>
                         <exclude>
                             <groupId>org.apache.tika</groupId>
-                            <artifactId>tika-core:jar</artifactId>
+                            <artifactId>tika-parsers</artifactId>
                             <version>1.15</version>
                         </exclude>
                         <exclude><groupId>ch.qos.logback</groupId><artifactId>logback-core</artifactId><version>1.1.9</version></exclude>

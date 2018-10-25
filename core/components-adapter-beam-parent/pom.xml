@@ -19,6 +19,7 @@
         <beam.version>2.5.0-tlnd</beam.version>
         <spark.version>2.2.1</spark.version>
         <hadoop.version>2.7.3</hadoop.version>
+        <okhttp.version>2.7.4</okhttp.version>
         <scala.version>2.11.12</scala.version>
         <scala-xml.version>1.0.2</scala-xml.version>
         <zookeeper.version>3.4.10</zookeeper.version>
@@ -150,6 +151,11 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
