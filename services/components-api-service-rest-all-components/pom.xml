@@ -30,7 +30,7 @@
         <jackson.version>2.9.5</jackson.version>
         <jackson.version.annotations>2.9.0</jackson.version.annotations>
         <guava.version>20.0</guava.version>
-        <logback.version>1.1.9</logback.version>
+        <logback.version>1.1.11</logback.version>
         <slf4.version>1.7.25</slf4.version>
         <spring-test.version>4.3.20.RELEASE</spring-test.version>
         <bnd-annotation.version>2.4.0</bnd-annotation.version>
