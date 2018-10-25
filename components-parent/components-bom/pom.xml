@@ -187,6 +187,7 @@
         <tomcat-jasper.version>5.5.23</tomcat-jasper.version>
         <xercesImpl.version>2.9.1</xercesImpl.version>
         <xml-apis.version>1.4.01</xml-apis.version>
+        <xstream.version>1.4.10</xstream.version>
         <xz.version>1.5</xz.version>
         <zookeeper.version>3.4.10</zookeeper.version>
     </properties>
@@ -1542,6 +1543,11 @@
                 <groupId>org.apache.jena</groupId>
                 <artifactId>jena-core</artifactId>
                 <version>${jena.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>${xstream.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
