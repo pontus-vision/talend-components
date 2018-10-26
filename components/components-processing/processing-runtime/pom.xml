@@ -15,6 +15,7 @@
     <name>Components - Processing Runtime</name>
 
     <properties>
+        <io.netty.version>4.1.30.Final</io.netty.version>
         <coverage.sonar.reportRoot>${project.basedir}/..</coverage.sonar.reportRoot>
     </properties>
 
@@ -59,6 +60,21 @@
             <artifactId>spark-streaming_2.11</artifactId>
             <version>${spark.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-all</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>${io.netty.version}</version>
         </dependency>
 
         <!-- Tests -->
