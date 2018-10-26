@@ -19,6 +19,7 @@
         <beam.version>2.5.0-tlnd</beam.version>
         <spark.version>2.3.2</spark.version>
         <hadoop.version>2.9.1</hadoop.version>
+        <io.netty.version>4.1.30.Final</io.netty.version>
         <okhttp.version>2.7.4</okhttp.version>
         <scala.version>2.11.12</scala.version>
         <scala-xml.version>1.0.2</scala-xml.version>
@@ -106,10 +107,14 @@
                         <groupId>javax.mail</groupId>
                         <artifactId>mail</artifactId>
                     </exclusion>
-                    <!--<exclusion>-->
-                        <!--<groupId>io.netty</groupId>-->
-                        <!--<artifactId>netty-all</artifactId>-->
-                    <!--</exclusion>-->
+                    <exclusion>
+                        <groupId>io.netty</groupId>
+                        <artifactId>netty-all</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>io.netty</groupId>
+                        <artifactId>netty</artifactId>
+                    </exclusion>
                     <exclusion>
                         <groupId> org.scala-lang</groupId>
                         <artifactId>scalap</artifactId>
@@ -119,6 +124,11 @@
                         <artifactId>unused</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${io.netty.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.hadoop</groupId>

@@ -60,7 +60,11 @@
             <version>${spark.version}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>${io.netty.version}</version>
+        </dependency>
         <!-- Tests -->
     </dependencies>
 
