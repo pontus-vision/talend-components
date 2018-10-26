@@ -15,7 +15,6 @@
     <name>Components - Processing Runtime</name>
 
     <properties>
-        <io.netty.version>4.1.30.Final</io.netty.version>
         <coverage.sonar.reportRoot>${project.basedir}/..</coverage.sonar.reportRoot>
     </properties>
 
@@ -76,7 +75,6 @@
             <artifactId>netty-all</artifactId>
             <version>${io.netty.version}</version>
         </dependency>
-
         <!-- Tests -->
     </dependencies>
 
