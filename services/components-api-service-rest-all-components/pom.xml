@@ -27,7 +27,7 @@
         <git_branch>local</git_branch>
         <groovy.version>2.4.8</groovy.version>
         <talend_docker_registry>registry.datapwn.com</talend_docker_registry>
-        <jackson.version>2.9.5</jackson.version>
+        <jackson.version>2.9.7</jackson.version>
         <jackson.version.annotations>2.9.0</jackson.version.annotations>
         <guava.version>20.0</guava.version>
         <logback.version>1.1.11</logback.version>

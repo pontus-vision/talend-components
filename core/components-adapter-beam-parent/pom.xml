@@ -24,7 +24,7 @@
         <scala.version>2.11.12</scala.version>
         <scala-xml.version>1.0.2</scala-xml.version>
         <zookeeper.version>3.4.10</zookeeper.version>
-        <jackson.version>2.9.5</jackson.version>
+        <jackson.version>2.9.7</jackson.version>
         <spring-boot.version>1.5.17.RELEASE</spring-boot.version>
         <spring-test.version>4.3.20.RELEASE</spring-test.version>
     </properties>
