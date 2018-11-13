@@ -15,7 +15,6 @@
     <properties>
         <aetherVersion>1.0.0.v20140518</aetherVersion>
         <mavenVersion>3.1.0</mavenVersion>
-        <jackson.version>2.9.7</jackson.version>
     </properties>
 
     <dependencies>
@@ -70,7 +69,6 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
 

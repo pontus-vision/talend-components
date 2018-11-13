@@ -10,12 +10,6 @@
 	<name>Components - OAuth</name>
 	<artifactId>components-common-oauth</artifactId>
 	<packaging>bundle</packaging>
-	<properties>
-		<jackson.version>2.9.7</jackson.version>
-		<spring-boot.version>1.5.17.RELEASE</spring-boot.version>
-		<spring-test.version>4.3.20.RELEASE</spring-test.version>
-		<groovy.version>2.4.8</groovy.version>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.oltu.oauth2</groupId>
@@ -52,16 +46,12 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy</artifactId>
-			<version>${groovy.version}</version>
 		</dependency>
 	</dependencies>
-
-
 	<build>
 		<plugins>
 			<plugin>
@@ -109,5 +99,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

@@ -20,13 +20,6 @@
         <spark.version>2.3.2</spark.version>
         <hadoop.version>2.9.1</hadoop.version>
         <io.netty.version>4.1.30.Final</io.netty.version>
-        <okhttp.version>2.7.4</okhttp.version>
-        <scala.version>2.11.12</scala.version>
-        <scala-xml.version>1.0.2</scala-xml.version>
-        <zookeeper.version>3.4.10</zookeeper.version>
-        <jackson.version>2.9.7</jackson.version>
-        <spring-boot.version>1.5.17.RELEASE</spring-boot.version>
-        <spring-test.version>4.3.20.RELEASE</spring-test.version>
     </properties>
 
     <!-- Necessary if you want to compile with a SNAPSHOT of beam. -->
@@ -51,11 +44,6 @@
                 <groupId>org.apache.beam</groupId>
                 <artifactId>beam-sdks-java-core</artifactId>
                 <version>${beam.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.auto.value</groupId>
-                <artifactId>auto-value</artifactId>
-                <version>1.5.1</version>
             </dependency>
             <!-- extensions -->
             <dependency>
@@ -125,47 +113,6 @@
                 <groupId>org.apache.hadoop</groupId>
                 <artifactId>hadoop-client</artifactId>
                 <version>${hadoop.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.zookeeper</groupId>
-                <artifactId>zookeeper</artifactId>
-                <version>${zookeeper.version}</version>
-            </dependency>
-            <!-- scala -->
-            <dependency>
-                <groupId>org.scala-lang</groupId>
-                <artifactId>scala-compiler</artifactId>
-                <version>${scala.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.scala-lang</groupId>
-                <artifactId>scala-library</artifactId>
-                <version>${scala.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.scala-lang</groupId>
-                <artifactId>scalap</artifactId>
-                <version>${scala.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.scala-lang</groupId>
-                <artifactId>scala-reflect</artifactId>
-                <version>${scala.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.scala-lang.modules</groupId>
-                <artifactId>scala-xml_2.11</artifactId>
-                <version>${scala-xml.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.squareup.okhttp</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>${okhttp.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
