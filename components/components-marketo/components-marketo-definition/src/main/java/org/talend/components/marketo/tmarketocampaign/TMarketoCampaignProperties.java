@@ -12,14 +12,6 @@
 // ============================================================================
 package org.talend.components.marketo.tmarketocampaign;
 
-import static org.talend.components.marketo.tmarketocampaign.TMarketoCampaignProperties.TriggerAction.request;
-import static org.talend.daikon.properties.presentation.Widget.widget;
-import static org.talend.daikon.properties.property.PropertyFactory.newBoolean;
-import static org.talend.daikon.properties.property.PropertyFactory.newEnum;
-import static org.talend.daikon.properties.property.PropertyFactory.newInteger;
-import static org.talend.daikon.properties.property.PropertyFactory.newProperty;
-import static org.talend.daikon.properties.property.PropertyFactory.newString;
-
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -34,6 +26,14 @@ import org.talend.daikon.properties.presentation.Form;
 import org.talend.daikon.properties.presentation.Widget;
 import org.talend.daikon.properties.property.Property;
 import org.talend.daikon.serialize.migration.SerializeSetVersion;
+
+import static org.talend.components.marketo.tmarketocampaign.TMarketoCampaignProperties.TriggerAction.request;
+import static org.talend.daikon.properties.presentation.Widget.widget;
+import static org.talend.daikon.properties.property.PropertyFactory.newBoolean;
+import static org.talend.daikon.properties.property.PropertyFactory.newEnum;
+import static org.talend.daikon.properties.property.PropertyFactory.newInteger;
+import static org.talend.daikon.properties.property.PropertyFactory.newProperty;
+import static org.talend.daikon.properties.property.PropertyFactory.newString;
 
 public class TMarketoCampaignProperties extends MarketoComponentProperties implements SerializeSetVersion {
 
@@ -209,8 +209,8 @@ public class TMarketoCampaignProperties extends MarketoComponentProperties imple
     }
 
     public void afterTriggerCampaignForLeadsInBatch() {
-        if (batchSize.getValue() > 100) {
-            batchSize.setValue(100);
+        if (batchSize.getValue() > 300) {
+            batchSize.setValue(300);
         }
         afterCampaignAction();
     }

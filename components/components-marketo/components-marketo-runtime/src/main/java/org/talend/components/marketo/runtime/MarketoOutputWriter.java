@@ -12,15 +12,6 @@
 // ============================================================================
 package org.talend.components.marketo.runtime;
 
-import static org.talend.components.marketo.MarketoConstants.FIELD_CAMPAIGN_ID;
-import static org.talend.components.marketo.MarketoConstants.FIELD_ERROR_MSG;
-import static org.talend.components.marketo.MarketoConstants.FIELD_LEAD_ID;
-import static org.talend.components.marketo.MarketoConstants.FIELD_MARKETO_GUID;
-import static org.talend.components.marketo.MarketoConstants.FIELD_REASON;
-import static org.talend.components.marketo.MarketoConstants.FIELD_SEQ;
-import static org.talend.components.marketo.MarketoConstants.FIELD_STATUS;
-import static org.talend.components.marketo.MarketoConstants.FIELD_SUCCESS;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -40,6 +31,15 @@ import org.talend.components.marketo.runtime.client.type.MarketoSyncResult;
 import org.talend.components.marketo.tmarketooutput.TMarketoOutputProperties;
 import org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.OutputOperation;
 import org.talend.daikon.avro.AvroUtils;
+
+import static org.talend.components.marketo.MarketoConstants.FIELD_CAMPAIGN_ID;
+import static org.talend.components.marketo.MarketoConstants.FIELD_ERROR_MSG;
+import static org.talend.components.marketo.MarketoConstants.FIELD_LEAD_ID;
+import static org.talend.components.marketo.MarketoConstants.FIELD_MARKETO_GUID;
+import static org.talend.components.marketo.MarketoConstants.FIELD_REASON;
+import static org.talend.components.marketo.MarketoConstants.FIELD_SEQ;
+import static org.talend.components.marketo.MarketoConstants.FIELD_STATUS;
+import static org.talend.components.marketo.MarketoConstants.FIELD_SUCCESS;
 
 public class MarketoOutputWriter extends MarketoWriter {
 
@@ -72,14 +72,7 @@ public class MarketoOutputWriter extends MarketoWriter {
         //
         operation = properties.outputOperation.getValue();
         dieOnError = properties.dieOnError.getValue();
-        if (operation.equals(OutputOperation.syncMultipleLeads) || operation.equals(OutputOperation.deleteLeads)) {
-            batchSize = properties.batchSize.getValue();
-        }
-        if (operation.equals(OutputOperation.deleteLeads) && !properties.deleteLeadsInBatch.getValue()) {
-            batchSize = 1;
-        }
-        isBatchMode = ((operation.equals(OutputOperation.syncMultipleLeads) || operation.equals(OutputOperation.deleteLeads))
-                && batchSize > 1);
+        batchSize = properties.batchSize.getValue();
     }
 
     @Override

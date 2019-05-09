@@ -1,10 +1,7 @@
 package org.talend.components.marketo.runtime;
 
-import static org.slf4j.LoggerFactory.getLogger;
-
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.talend.components.api.component.runtime.Sink;
 import org.talend.components.api.component.runtime.WriteOperation;
 import org.talend.components.api.container.RuntimeContainer;
@@ -20,6 +17,8 @@ import org.talend.daikon.i18n.I18nMessages;
 import org.talend.daikon.properties.ValidationResult;
 import org.talend.daikon.properties.ValidationResult.Result;
 import org.talend.daikon.properties.ValidationResultMutable;
+
+import static org.slf4j.LoggerFactory.getLogger;
 
 public class MarketoSink extends MarketoSourceOrSink implements Sink {
 
@@ -70,8 +69,7 @@ public class MarketoSink extends MarketoSourceOrSink implements Sink {
         // check getMultipleLeads with an input
         if (properties instanceof TMarketoInputProperties) {
             // operation must be getMultipleLeads
-            if (!((TMarketoInputProperties) properties).inputOperation.getValue().equals(
-                    InputOperation.getMultipleLeads)) {
+            if (!((TMarketoInputProperties) properties).inputOperation.getValue().equals(InputOperation.getMultipleLeads)) {
                 vr.setStatus(Result.ERROR);
                 vr.setMessage(messages.getMessage("error.validation.sink.getmultipleleads.only"));
                 return vr;
@@ -106,9 +104,9 @@ public class MarketoSink extends MarketoSourceOrSink implements Sink {
                     return vr;
                 }
                 if (p.triggerCampaignForLeadsInBatch.getValue()) {
-                    if (p.batchSize.getValue() < 1 || p.batchSize.getValue() > 100) {
-                        p.batchSize.setValue(100);
-                        LOG.info(messages.getMessage("error.validation.batchSize.range", 100));
+                    if (p.batchSize.getValue() < 1 || p.batchSize.getValue() > 300) {
+                        p.batchSize.setValue(300);
+                        LOG.info(messages.getMessage("error.validation.batchSize.range", 300));
                     }
                 }
                 break;
