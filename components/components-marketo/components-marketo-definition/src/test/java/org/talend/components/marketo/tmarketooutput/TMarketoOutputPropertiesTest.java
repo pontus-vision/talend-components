@@ -113,7 +113,6 @@ public class TMarketoOutputPropertiesTest {
                 props.schemaFlow.schema.getValue().getFields());
         props.outputOperation.setValue(syncMultipleLeads);
         props.batchSize.setValue(1);
-        props.afterBatchSize();
         props.afterOutputOperation();
         assertEquals(MarketoConstants.getRESTOutputSchemaForSyncMultipleLeads(), props.schemaInput.schema.getValue());
         assertEquals(MarketoConstants.getRESTOutputSchemaForSyncMultipleLeads().getFields(),
