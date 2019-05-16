@@ -62,7 +62,7 @@ import static org.talend.daikon.properties.property.PropertyFactory.newString;
 
 public class TMarketoOutputProperties extends MarketoComponentWizardBaseProperties implements SerializeSetVersion {
 
-    public Property<Integer> batchSize = newInteger("batchSize");
+    public Property<Integer> batchSize = newInteger("batchSize").setRequired();
 
     public Property<Boolean> dieOnError = newBoolean("dieOnError");
 

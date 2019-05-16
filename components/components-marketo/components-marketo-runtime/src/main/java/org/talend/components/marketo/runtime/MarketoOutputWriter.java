@@ -165,45 +165,39 @@ public class MarketoOutputWriter extends MarketoWriter {
 
     public void processResult(MarketoSyncResult mktoResult) {
         cleanWrites();
+        LOG.debug("[processResult] {}.", mktoResult);
         if (!mktoResult.isSuccess()) {
             // build a SyncStatus for record which failed
             SyncStatus status = new SyncStatus();
             status.setStatus("failed");
             status.setErrorMessage(mktoResult.getErrorsString());
             if (mktoResult.getRecords().isEmpty()) {
+                LOG.debug("[processResult] Global fault, applying to all records.");
                 mktoResult.setRecords(Arrays.asList(status));
-            } else {
-                List<SyncStatus> tmp = mktoResult.getRecords();
-                tmp.add(status);
-                mktoResult.setRecords(tmp);
+                for (IndexedRecord statusRecord : recordsToProcess) {
+                    handleReject(fillRecord(status, rejectSchema, statusRecord));
+                }
+                return;
             }
+            List<SyncStatus> tmp = mktoResult.getRecords();
+            tmp.add(status);
+            mktoResult.setRecords(tmp);
         }
         int idx = 0;
+        LOG.debug("[processResult] recordsToProcess: {}.", recordsToProcess);
         for (SyncStatus status : mktoResult.getRecords()) {
             IndexedRecord statusRecord = recordsToProcess.get(idx);
+            LOG.debug("[processResult] [idx: {}] statusRecord: {}; status: {} ", idx, statusRecord, status);
             idx++;
             boolean isSuccess = Arrays.asList("created", "updated", "deleted", "scheduled", "triggered")
                     .contains(status.getStatus().toLowerCase());
-            if (isBatchMode) {
-                if (!isSuccess && dieOnError) {
+            if (isSuccess) {
+                handleSuccess(fillRecord(status, flowSchema, statusRecord));
+            } else {
+                if (dieOnError) {
                     throw new MarketoRuntimeException(status.getAvailableReason());
                 }
-                // in batchmode we have only 0 or 1 connector only
-                handleSuccess(fillRecord(status, flowSchema, statusRecord));
-                if (!isSuccess) {
-                    // readjust counts
-                    result.successCount--;
-                    result.rejectCount++;
-                }
-            } else {
-                if (isSuccess) {
-                    handleSuccess(fillRecord(status, flowSchema, statusRecord));
-                } else {
-                    if (dieOnError) {
-                        throw new MarketoRuntimeException(status.getAvailableReason());
-                    }
-                    handleReject(fillRecord(status, rejectSchema, statusRecord));
-                }
+                handleReject(fillRecord(status, rejectSchema, statusRecord));
             }
         }
     }
