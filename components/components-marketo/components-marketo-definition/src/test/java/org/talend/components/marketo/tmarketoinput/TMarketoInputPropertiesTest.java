@@ -12,20 +12,6 @@
 // ============================================================================
 package org.talend.components.marketo.tmarketoinput;
 
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.Company;
-import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.CustomObject;
-import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.Opportunity;
-import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.OpportunityRole;
-import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.getLead;
-import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.getLeadActivity;
-import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.getLeadChanges;
-import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.getMultipleLeads;
-
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -47,6 +33,22 @@ import org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties
 import org.talend.daikon.properties.ValidationResult.Result;
 import org.talend.daikon.properties.presentation.Form;
 import org.talend.daikon.serialize.PostDeserializeSetup;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.Company;
+import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.CustomObject;
+import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.Opportunity;
+import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.OpportunityRole;
+import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.getLead;
+import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.getLeadActivity;
+import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.getLeadChanges;
+import static org.talend.components.marketo.wizard.MarketoComponentWizardBaseProperties.InputOperation.getMultipleLeads;
 
 public class TMarketoInputPropertiesTest extends MarketoTestBase {
 
@@ -142,7 +144,7 @@ public class TMarketoInputPropertiesTest extends MarketoTestBase {
         assertFalse(f.getWidget(tl_sinceDateTime).isVisible());
         assertFalse(f.getWidget(tl_oldestCreateDate).isVisible());
         assertFalse(f.getWidget(tl_latestCreateDate).isVisible());
-        assertFalse(f.getWidget(tl_batchSize).isVisible());
+        assertTrue(f.getWidget(tl_batchSize).isVisible());
         // REST API Mode - getMultipleLeads - StaticList
         props.inputOperation.setValue(getMultipleLeads);
         props.leadSelectorREST.setValue(LeadSelector.StaticListSelector);

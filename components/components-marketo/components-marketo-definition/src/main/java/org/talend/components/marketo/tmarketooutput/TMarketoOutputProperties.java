@@ -227,6 +227,9 @@ public class TMarketoOutputProperties extends MarketoComponentWizardBaseProperti
                 switch (outputOperation.getValue()) {
                 case syncLead:
                 case syncMultipleLeads:
+                    if (syncLead.equals(outputOperation.getValue())) {
+                        form.getWidget(batchSize.getName()).setVisible(false);
+                    }
                     form.getWidget(deDupeEnabled.getName()).setVisible(true);
                     form.getWidget(operationType.getName()).setHidden(deDupeEnabled.getValue());
                     form.getWidget(lookupField.getName()).setHidden(deDupeEnabled.getValue());

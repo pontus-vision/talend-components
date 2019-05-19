@@ -61,10 +61,15 @@ public class MarketoSink extends MarketoSourceOrSink implements Sink {
                 }
                 break;
             }
-            if (((TMarketoOutputProperties) properties).batchSize.getValue() == null) {
+            Integer bsize = ((TMarketoOutputProperties) properties).batchSize.getValue();
+            if (bsize == null) {
                 vr.setStatus(Result.ERROR);
                 vr.setMessage(messages.getMessage("error.validation.batchSize.empty"));
                 return vr;
+            }
+            if (bsize < 1 || bsize > 300) {
+                ((TMarketoOutputProperties) properties).batchSize.setValue(300);
+                LOG.info(messages.getMessage("error.validation.batchSize.range", 300));
             }
         }
         // check list operations

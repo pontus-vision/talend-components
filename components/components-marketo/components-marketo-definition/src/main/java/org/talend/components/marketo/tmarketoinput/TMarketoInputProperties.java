@@ -548,9 +548,9 @@ public class TMarketoInputProperties extends MarketoComponentWizardBasePropertie
                         } else {
                             form.getWidget(listParamListId.getName()).setVisible(true);
                         }
-                        form.getWidget(batchSize.getName()).setVisible(true);
                         break;
                     }
+                    form.getWidget(batchSize.getName()).setVisible(true);
                 }
             }
             // getLeadActivity
